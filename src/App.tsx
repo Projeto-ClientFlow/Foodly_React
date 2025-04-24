@@ -7,6 +7,7 @@ import Cadastro from './pages/cadastro/Cadastro'
 import Home from './pages/home/Home'
 import Login from './pages/login/Login'
 import ListarProdutos from './components/produtos/listaprodutos/ListaProdutos'
+import SobreNos from './components/sobre_nos/SobreNos'
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/login" element={<Login />} />
               <Route path="/produtos" element={<ListarProdutos />} />
-
+              <Route path="/sobre-nos" element={<SobreNos />} />
               {/* <Route path="/temas" element={<ListaCategorias/>} />
               <Route path="/cadastrarcategoria" element={<FormCategoria />} />
 <Route path="/editarcategoria/:id" element={<FormCategoria />} /> */}

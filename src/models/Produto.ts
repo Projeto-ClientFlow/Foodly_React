@@ -2,9 +2,9 @@ import Categoria from "./Categoria";
 
 export default interface Produto {
   id?: number|null;
-  nome: string;
-  descricao: string;
-  preco: number;
+  nomeProduto: string;
+  descricaoProduto: string;
+  precoProduto: number;
   tamanhoPorcao: string;
   categoria?: Categoria | null;
 }

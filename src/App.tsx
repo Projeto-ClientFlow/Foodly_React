@@ -19,9 +19,6 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/temas" element={<ListaCategorias/>} />
-              <Route path="/cadastrarcategoria" element={<FormCategoria />} />
-<Route path="/editarcategoria/:id" element={<FormCategoria />} />
             </Routes>
           </div>
           <Footer />

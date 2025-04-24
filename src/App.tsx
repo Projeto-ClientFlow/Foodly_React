@@ -6,6 +6,7 @@ import { AuthProvider } from './contexts/AuthContext'
 import Cadastro from './pages/cadastro/Cadastro'
 import Home from './pages/home/Home'
 import Login from './pages/login/Login'
+import SobreNos from './components/sobre_nos/SobreNos'
 
 function App() {
   return (
@@ -17,11 +18,10 @@ function App() {
             <Routes>
               <Route path="/" element={<Login />} />
               <Route path="/home" element={<Home />} />
+              <Route path="/sobre-nos" element={<SobreNos />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/temas" element={<ListaCategorias/>} />
-              <Route path="/cadastrarcategoria" element={<FormCategoria />} />
-<Route path="/editarcategoria/:id" element={<FormCategoria />} />
+              
             </Routes>
           </div>
           <Footer />

@@ -1,9 +1,11 @@
 
+import Postagem from "./Produto";
+
 export default interface Usuario {
-  id: number;
+  id?: number | null;
   nome: string;
   usuario: string;
   foto: string;
   senha: string;
-  produto?: Produto [] | null;
+  produto?: Produto[] | null;
 }

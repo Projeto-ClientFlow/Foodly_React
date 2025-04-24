@@ -29,6 +29,19 @@ export function ToastAlerta(mensagem: string, tipo: string) {
             });
             break;
 
+            case
+                toast[tipo](mensagem, {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                }):
+                break;
+            
+
             case 'info':
             default:
             toast.info(mensagem, {

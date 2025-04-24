@@ -55,7 +55,7 @@ function ListarProdutos() {
 
       const filtrarProduto = () => {
         const produtoFiltrado = produto.filter((produto) =>
-            produto.nome.toLowerCase().includes(busca.toLowerCase())
+            produto.nomeProduto.toLowerCase().includes(busca.toLowerCase())
         );
         setProdutoFiltrado(produtoFiltrado);
     };

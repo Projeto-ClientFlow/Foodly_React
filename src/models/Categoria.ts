@@ -1,6 +1,6 @@
 import Produto from "./Produto";
 
-export default interface Tema {
+export default interface Categoria {
     id: number;
     descricao: string;
     produto?: Produto[] | null;

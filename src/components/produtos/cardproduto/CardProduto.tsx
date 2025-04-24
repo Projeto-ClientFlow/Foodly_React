@@ -88,14 +88,14 @@ function CardProduto({ produto }: CardProdutoProps ) {
                         <p className="text-[#85868f]"><strong>Categoria:</strong> {produto.categoria?.descricao}</p>
                         <div className="flex space-x-4">
                             <Link 
-                                to="/atualizarproduto"
+                                to={`/atualizarproduto/${produto.id}`}
                                 onClick={() => setModalAberto(false)}
                                 className="mt-4 w-full text-white bg-[#FF4D38] py-2 rounded-xl font-semibold text-center block"
                                 >
                                 Atualizar
                             </Link>
                             <Link 
-                                to="/deletarproduto"
+                                to={`/deletarproduto/${produto.id}`}
                                 onClick={() => setModalAberto(false)}
                                 className="mt-4 w-full text-white bg-[#000000] py-2 rounded-xl font-semibold text-center block"
                                 >

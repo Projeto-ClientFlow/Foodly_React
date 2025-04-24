@@ -28,3 +28,12 @@ export const atualizar = async (url: string, dados: Object, setDados: Function, 
     const resposta = await api.put(url, dados, header)
     setDados(resposta.data)
 }
+
+export const listar = async <T>(
+    url: string,
+    setDados: (resposta: T) => void,
+    config: { headers: { Authorization: string } }
+  ) => {
+    const resposta = await api.get<T>(url, config);
+    setDados(resposta.data);
+}

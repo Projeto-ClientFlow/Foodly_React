@@ -59,16 +59,8 @@ function Cadastro() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 h-screen bg-[#FFF5F3] font-sans">
-      {/* IMAGEM */}
-      <div className="hidden lg:flex justify-center items-center h-full">
-        <img
-          src="https://ik.imagekit.io/willa/pexels-adonyi-foto-2064359.jpg?updatedAt=1745500406158"
-          alt="Cadastro do usuário"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      {/* FORMULÁRIO */}
+      
+      {/* Formulário - agora do lado esquerdo */}
       <div className="flex justify-center items-center h-full">
         <form onSubmit={cadastrarNovoUsuario} className="flex flex-col w-3/4 gap-4">
           <h2 className="text-[#FF4D38] text-4xl font-bold mb-4">Crie sua conta</h2>
@@ -155,6 +147,15 @@ function Cadastro() {
             )}
           </button>
         </form>
+      </div>
+
+      {/* Imagem - agora do lado direito */}
+      <div className="hidden lg:flex justify-center items-center h-full">
+        <img
+          src="https://ik.imagekit.io/willa/pexels-adonyi-foto-2064359.jpg?updatedAt=1745500406158"
+          alt="Cadastro do usuário"
+          className="w-full h-full object-cover"
+        />
       </div>
     </div>
   );

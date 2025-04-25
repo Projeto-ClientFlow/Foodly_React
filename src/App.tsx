@@ -11,6 +11,8 @@ import SobreNos from './components/sobre_nos/SobreNos'
 import CadastrarProduto from './components/produtos/cadastrarproduto/CadastrarProduto'
 import DeletarProduto from './components/produtos/deletarproduto/DeletarProduto'
 import AtualizarProduto from './components/produtos/atualizarproduto/AtualizarProduto'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   return (
@@ -24,7 +26,6 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/login" element={<Login />} />
               <Route path="/produtos" element={<ListarProdutos />} />
               <Route path="/sobre-nos" element={<SobreNos />} />
               <Route path="/cadastrarproduto" element={<CadastrarProduto />} />
@@ -33,10 +34,11 @@ function App() {
             </Routes>
           </div>
           <Footer />
+          <ToastContainer />
         </BrowserRouter>
       </AuthProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,59 +1,50 @@
-import { toast } from 'react-toastify';
+    import { toast, ToastOptions } from "react-toastify";
 
-export function ToastAlerta(mensagem: string, tipo: string) {
+    const toastConfig: ToastOptions = {
+    position: "top-right",
+    autoClose: 2500,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "colored",
+    style: {
+        borderRadius: "10px",
+        fontWeight: "bold",
+        fontSize: "0.9rem",
+        color: "#fff",
+    },
+    };
+
+    export function ToastAlerta(mensagem: string, tipo: string) {
     switch (tipo) {
-            
-        case 'sucesso':
-            toast.success(mensagem, {
-                position: 'top-right',
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: 'colored',
-                progress: undefined,
-            });
-            break;
+        case "sucesso":
+        toast.success(mensagem, {
+            ...toastConfig,
+            style: { ...toastConfig.style, background: "#28A745" }, // Verdinho pra sucesso
+        });
+        break;
 
-        case 'erro':
-            toast.error(mensagem, {
-                position: 'top-right',
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: 'colored',
-                progress: undefined,
-            });
-            break;
+        case "erro":
+        toast.error(mensagem, {
+            ...toastConfig,
+            style: { ...toastConfig.style, background: "#DC3545" }, // Vermelhinho pra erro
+        });
+        break;
 
-            case
-                toast[tipo](mensagem, {
-                    position: "top-right",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                }):
-                break;
-            
+        case "warn":
+        toast.warn(mensagem, {
+            ...toastConfig,
+            style: { ...toastConfig.style, background: "#FF8000" }, // Laranjinha pra aviso
+        });
+        break;
 
-            case 'info':
-            default:
-            toast.info(mensagem, {
-                position: 'top-right',
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: 'colored',
-                progress: undefined,
-            });
-            break;
+        case "info":
+        default:
+        toast.info(mensagem, {
+            ...toastConfig,
+            style: { ...toastConfig.style, background: "#0061FF" }, // Azulzinho para informação
+        });
+        break;
     }
-}
+    }

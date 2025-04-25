@@ -28,10 +28,10 @@ function CardProduto({ produto }) {
         <div className="flex flex-col justify-center h-full p-2">
           {/* Nome do produto centralizado */}
           <div className="flex justify-center w-full mt-4">
-            <p className="text-2xl bg-white font-bold text-[#FF4D38] text-center ">
-              {produto.nomeProduto}
+            <p className="text-2xl bg-white font-bold text-[#FF4D38] text-center max-w-[300px] break-words">
+                {produto.nomeProduto}
             </p>
-          </div>
+        </div>
           
           <div className="flex justify-center w-full py-4 items-center">
             <img
@@ -103,7 +103,8 @@ function CardProduto({ produto }) {
             />
             </div>
             <p className="text-[#85868f]"><strong>Descrição:</strong> {produto.descricaoProduto}</p>
-            <p className="text-[#85868f]"><strong>Preço: R$</strong> {produto.precoProduto}</p>
+            <p className="text-[#85868f]"><span className="font-bold">Preço:&nbsp;</span>
+            <span>R$ {produto.precoProduto}</span></p>
             <p className="text-[#85868f]"><strong>Tamanho da Porção:</strong> {produto.tamanhoPorcao} gramas</p>
             <p className="text-[#85868f]"><strong>Categoria:</strong> {produto.categoria?.descricao}</p>
 

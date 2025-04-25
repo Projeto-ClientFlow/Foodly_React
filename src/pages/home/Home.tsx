@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const cards = [
   { label: "Tacos", img: "https://ik.imagekit.io/willa/pexels-pixabay-461198.jpg?updatedAt=1745503482590" },
@@ -14,21 +15,21 @@ const cards = [
 function Home() {
   return (
     <>
-      <div className="relative w-full h-screen overflow-x-hidden">
+      <div className="w-full h-screen overflow-x-hidden">
         <img
-          src="https://ik.imagekit.io/willa/Novo%20Projeto%20(1)%20(1).jpg?updatedAt=1745503482590"
+          src="https://ik.imagekit.io/willa/Novo%20Projeto.jpg?updatedAt=1745590510514"
           alt="Imagem da Página Home"
-          className="w-full h-full object-cover absolute inset-0 z-0"
+          className="w-full h-full object-cover inset-0 z-0 mt-[70px]"
         />
 
         <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-center px-4 z-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-[#FF4D38] drop-shadow-md">
             Mate sua fome com Foodly!
           </h2>
-          <p className="text-md sm:text-lg md:text-xl text-[#8C8E98] mb-1 drop-shadow-md">
+          <p className="text-md sm:text-lg md:text-xl text-[#8C8E98] mb-1">
             Na compra de produtos acima de R$100
           </p>
-          <p className="text-md sm:text-lg md:text-xl font-bold text-[#8C8E98] drop-shadow-md">
+          <p className="text-md sm:text-lg md:text-xl font-bold text-[#8C8E98]">
             Ganhe 10% de desconto
           </p>
         </div>
@@ -51,9 +52,11 @@ function Home() {
                 alt={card.label}
                 className="w-full h-full object-cover absolute top-0 left-0 z-0"
               />
-              <div className="absolute text-white text-lg font-bold bg-[#FF4D38] bg-opacity-50 px-4 py-2 rounded-lg">
+              <Link to="/login"
+                className="absolute text-white text-lg font-bold bg-[#FF4D38] bg-opacity-50 px-4 py-2 rounded-lg"
+              >
                 {card.label}
-              </div>
+              </Link>
             </div>
           ))}
         </div>

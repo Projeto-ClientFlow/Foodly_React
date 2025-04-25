@@ -24,7 +24,7 @@ function AtualizarProduto() {
                 });
             } catch (error: any) {
                 console.error("Erro ao buscar produto:", error.response ?? error);
-                ToastAlerta("Erro ao buscar o produto.", "error");
+                ToastAlerta("Erro ao buscar o produto.", "erro");
                 navigate("/produtos");
             }
         }
@@ -61,10 +61,10 @@ function AtualizarProduto() {
                 { ...produto, id: Number(id) },
                 { headers: { Authorization: token } }
             );
-            ToastAlerta("O produto foi atualizado com sucesso!", "success");
+            ToastAlerta("O produto foi atualizado com sucesso!", "sucesso");
             retornar();
         } catch (error: any) {
-            ToastAlerta("Erro ao atualizar o produto.", "error");
+            ToastAlerta("Erro ao atualizar o produto.", "erro");
             console.error(error);
         }
 
@@ -78,7 +78,7 @@ function AtualizarProduto() {
                     headers: { Authorization: token },
                 });
             } catch (error) {
-                ToastAlerta("Erro ao buscar categorias!", "error");
+                ToastAlerta("Erro ao buscar categorias!", "erro");
             }
         }
 

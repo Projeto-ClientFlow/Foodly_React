@@ -9,6 +9,10 @@ import Login from './pages/login/Login'
 import SobreNos from './components/sobre_nos/SobreNos'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify'
+import Perfil from './pages/perfil/Perfil'
+import EditarPerfil from './pages/perfil/atualizarperfil/AtualizarPerfil'
+import DeletarPerfil from './pages/perfil/deletarperfil/DeletarPerfil'
+
 
 
 
@@ -26,6 +30,9 @@ function App() {
               <Route path="/sobre-nos" element={<SobreNos />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/perfil" element={<Perfil />} />
+              <Route path="/editar-perfil" element={<EditarPerfil />} />
+              <Route path="/deletar-perfil" element={<DeletarPerfil />} />
               
             </Routes>
           </div>

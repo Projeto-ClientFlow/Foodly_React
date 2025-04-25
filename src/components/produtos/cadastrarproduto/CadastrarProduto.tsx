@@ -149,6 +149,22 @@ return (
             onChange={ atualizarEstado}
             />   
         </div>
+        <div className="flex flex-col gap-2">
+            <label
+            htmlFor="foto"
+            className="text-[#FF4D38] font-bold mb-0 text-lg"
+            >
+            Foto
+            </label>
+            <input
+            placeholder="Informe o link da foto do produto"
+            name="foto"
+            className="w-full bg-[#f0f0f0] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
+            value={produto.foto || ""}
+            onChange={ atualizarEstado}
+            />   
+        </div>
+
 
     
                 <div className="flex flex-col gap-2">

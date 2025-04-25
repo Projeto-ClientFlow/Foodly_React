@@ -6,7 +6,7 @@ export default function SobreNos() {
     {
       nome: "Eliane Medeiros",
       foto: "https://avatars.githubusercontent.com/u/100229060?v=4",
-      descricao: "Em transição de carreira, formada em ADS e QA em formação. Responsável pelo design e desenvolvimento da 'Navbar', 'Footer', página 'Sobre Nós' , 'Cadastro', 'Login' e pelo deploy do Back-End do site.",
+      descricao: "Em transição de carreira, formada em ADS e QA em formação. Responsável pelo design e desenvolvimento da 'Navbar', 'Footer', página 'Sobre Nós' , 'Cadastro', 'Login', 'Perfil' e pelo deploy do Back-End do site.",
       linkedin: "https://www.linkedin.com/in/elianempontes/",
       github: "https://github.com/ElianeMPontes",
     },
@@ -35,7 +35,7 @@ export default function SobreNos() {
   ];
 
   return (
-    <section className="py-12 px-4 bg-[#FFF5F3] min-h-screen pt-[140px] font-sans">
+    <section className="py-12 px-4 bg-[#FFFFFF] min-h-screen pt-[140px] font-rubik">
       <h1 className="text-[#FF4D38] text-4xl font-bold text-center mb-10">Conheça a Equipe Desenvolvedora</h1>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 max-w-6xl mx-auto">
         {pessoas.map((pessoa, index) => (
@@ -81,3 +81,4 @@ export default function SobreNos() {
     </section>
   );
 }
+

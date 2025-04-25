@@ -31,7 +31,7 @@ function App() {
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
               <Route path="/perfil" element={<Perfil />} />
-              <Route path="/editar-perfil" element={<EditarPerfil />} />
+              <Route path="/editar-perfil/:id" element={<EditarPerfil />} />
               <Route path="/deletar-perfil" element={<DeletarPerfil />} />
               
             </Routes>

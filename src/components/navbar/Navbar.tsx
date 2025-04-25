@@ -18,7 +18,7 @@ function Navbar() {
 
   if (usuario.token !== "") {
     component = (
-      <div className="w-full font-rubik py-4 px-4 bg-[#FFF5F3] text-[#FF4D38] fixed border-b border-[#FF4D38] z-50">
+      <div className="w-full font-rubik py-4 px-4 bg-[#FFEEEC] text-[#FF4D38] sticky top-0 border-b border-[#FF4D38] z-50">
         <div className="container mx-auto flex items-center justify-between">
           <Link to="/home" className="text-4xl font-bold">
             Foodly
@@ -39,7 +39,7 @@ function Navbar() {
             </Link>
             <button
               onClick={logout}
-              className="bg-[#FF4D38] text-white py-2 px-4 rounded-lg hover:opacity-90 transition"
+              className="bg-[#FF4D38] text-white py-2 px-8 rounded-lg hover:opacity-90 transition"
             >
               Sair
             </button>
@@ -49,7 +49,7 @@ function Navbar() {
     );
   } else {
     component = (
-      <div className="w-full font-rubik py-4 px-4 bg-[#FFF5F3] text-[#FF4D38] fixed border-b border-[#FF4D38] z-50">
+      <div className="w-full font-rubik py-4 px-4 bg-[#FFEEEC] text-[#FF4D38] sticky top-0 border-b border-[#FF4D38] z-50">
         <div className="container mx-auto flex items-center justify-between">
           <Link to="/home" className="text-4xl font-bold">
             Foodly

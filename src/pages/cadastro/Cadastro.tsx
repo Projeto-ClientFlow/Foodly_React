@@ -46,9 +46,9 @@ function Cadastro() {
       setIsLoading(true);
       try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
-        ToastAlerta('Usuário cadastrado com sucesso!','sucesso');
+        ToastAlerta('Usuário cadastrado com sucesso!', 'sucesso');
       } catch (error) {
-        ToastAlerta('Erro ao cadastrar o usuário!', 'erro')
+        ToastAlerta('Erro ao cadastrar o usuário!', 'erro');
       }
       setIsLoading(false);
     } else {
@@ -59,10 +59,9 @@ function Cadastro() {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen bg-[#FFF5F3] font-sans">
+    <div className="flex pt-0 min-h-screen bg-[#FFFFFF]">
+       <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-12">
       
-     
-      <div className="flex justify-center items-center h-full">
         <form onSubmit={cadastrarNovoUsuario} className="flex flex-col w-3/4 gap-4">
           <h2 className="text-[#FF4D38] text-4xl font-bold mb-4">Crie sua conta</h2>
 
@@ -73,7 +72,7 @@ function Cadastro() {
               id="nome"
               name="nome"
               placeholder="Digite o nome da sua empresa"
-              className="border border-[#FF4D38] bg-[#FFF5F3] rounded px-4 py-2 placeholder-[#666666]"
+              className="w-full bg-[#FFEEEC] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
               value={usuario.nome}
               onChange={atualizarEstado}
             />
@@ -86,7 +85,7 @@ function Cadastro() {
               id="usuario"
               name="usuario"
               placeholder="Digite seu e-mail"
-              className="border border-[#FF4D38] bg-[#FFF5F3] rounded px-4 py-2 placeholder-[#666666]"
+              className="w-full bg-[#FFEEEC] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
               value={usuario.usuario}
               onChange={atualizarEstado}
             />
@@ -99,7 +98,7 @@ function Cadastro() {
               id="foto"
               name="foto"
               placeholder="Informe o link da foto da sua empresa"
-              className="border border-[#FF4D38] bg-[#FFF5F3] rounded px-4 py-2 placeholder-[#666666]"
+              className="w-full bg-[#FFEEEC] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
               value={usuario.foto}
               onChange={atualizarEstado}
             />
@@ -112,7 +111,7 @@ function Cadastro() {
               id="senha"
               name="senha"
               placeholder="Digite sua senha"
-              className="border border-[#FF4D38] bg-[#FFF5F3] rounded px-4 py-2 placeholder-[#666666]"
+              className="w-full bg-[#FFEEEC] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
               value={usuario.senha}
               onChange={atualizarEstado}
             />
@@ -125,7 +124,7 @@ function Cadastro() {
               id="confirmarSenha"
               name="confirmarSenha"
               placeholder="Digite sua senha novamente"
-              className="border border-[#FF4D38] bg-[#FFF5F3] rounded px-4 py-2 placeholder-[#666666]"
+              className="w-full bg-[#FFEEEC] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
               value={confirmaSenha}
               onChange={handleConfirmarSenha}
             />
@@ -133,7 +132,7 @@ function Cadastro() {
 
           <button
             type="submit"
-            className="bg-[#FF4D38] text-white font-semibold px-8 py-2 rounded hover:bg-[#e04430] mt-2 w-full flex justify-center"
+            className="bg-[#FF4D38] text-white font-semibold text-2xl px-12 py-3 rounded-xl border border-[#FF4D38]/50 hover:bg-[#e04430] mt-4 mx-auto flex justify-center"
           >
             {isLoading ? (
               <RotatingLines
@@ -150,12 +149,11 @@ function Cadastro() {
         </form>
       </div>
 
-      
-      <div className="hidden lg:flex justify-center items-center h-full">
+      <div className="w-1/2 hidden md:flex justify-center items-center  p-0">
         <img
           src="https://ik.imagekit.io/willa/pexels-adonyi-foto-2064359.jpg?updatedAt=1745500406158"
           alt="Cadastro do usuário"
-          className="w-full h-full object-cover"
+          className="w-full h-[120vh] object-cover object-bottom"
         />
       </div>
     </div>

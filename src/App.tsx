@@ -11,6 +11,9 @@ import SobreNos from './components/sobre_nos/SobreNos'
 import CadastrarProduto from './components/produtos/cadastrarproduto/CadastrarProduto'
 import DeletarProduto from './components/produtos/deletarproduto/DeletarProduto'
 import AtualizarProduto from './components/produtos/atualizarproduto/AtualizarProduto'
+import Perfil from './pages/perfil/Perfil'
+import EditarPerfil from './pages/perfil/atualizarperfil/AtualizarPerfil'
+import DeletarPerfil from './pages/perfil/deletarperfil/DeletarPerfil'
 
 function App() {
   return (
@@ -30,6 +33,9 @@ function App() {
               <Route path="/cadastrarproduto" element={<CadastrarProduto />} />
               <Route path="/deletarproduto/:id" element={<DeletarProduto />} />
               <Route path="/atualizarproduto/:id" element={<AtualizarProduto />} />
+              <Route path="/perfil" element={<Perfil />} />
+              <Route path="/editar-perfil" element={<EditarPerfil />} />
+              <Route path="/deletar-perfil" element={<DeletarPerfil />} />
             </Routes>
           </div>
           <Footer />

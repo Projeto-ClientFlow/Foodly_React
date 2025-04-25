@@ -84,7 +84,7 @@ return (
             </div>
             <div className="text-1xl bg-white text-[#858690] text-center">
             <span className="font-bold">Tamanho: </span>
-            <span>{produto.tamanhoPorcao}</span>
+            <span>{produto.tamanhoPorcao} gramas</span>
             </div>
             <div className="text-1xl bg-white text-[#858690] text-center">
             <span className="font-bold">Preço: </span>

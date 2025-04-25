@@ -76,7 +76,7 @@ return (
     {/* Coluna do formulário */}
     <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-12">
         <h1 className="text-4xl font-bold text-[#FF4D38] mb-6 mt-10 text-center">
-        Crie seu produto
+        Cadastre seu produto
         </h1>
 
         <form
@@ -190,7 +190,7 @@ return (
                 </div>
 
         <button
-            className="text-white bg-[#FF4D38] flex items-center justify-center py-2 px-8 rounded-xl shadow-md mt-4 mx-auto min-w-[150px]"
+            className="text-white bg-[#FF4D38] flex items-center justify-center py-2 px-8 rounded-xl shadow-md mt-4 mx-auto min-w-[150px] mb-6"
             type="submit"
             disabled={isLoading}
         >
@@ -206,9 +206,9 @@ return (
     {/* Coluna da imagem */}
     <div className="w-1/2 hidden md:flex justify-center items-center  p-0">
         <img
-        src="https://ik.imagekit.io/willa/pexels-adonyi-foto-2064359.jpg?updatedAt=1745500406158"
+        src="https://ik.imagekit.io/willa/pexels-any-lane-5946075.jpg?updatedAt=1745522160250"
         alt="Cadastro do Produto"
-        className="w-full h-screen object-cover"
+        className="w-full h-[105vh] object-cover object-bottom"
         />
     </div>
     </div>

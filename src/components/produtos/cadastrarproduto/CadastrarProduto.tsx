@@ -38,7 +38,7 @@ async function gerarNovoProduto(e: ChangeEvent<HTMLFormElement>) {
     setIsLoading(true);
 
     try {
-    await cadastrar(`/produto`, produto, setProduto,{
+    await cadastrar(`/produtos`, produto, setProduto,{
         headers: {
         Authorization: token,
         },
@@ -60,7 +60,7 @@ async function gerarNovoProduto(e: ChangeEvent<HTMLFormElement>) {
 useEffect(() => {
     async function carregarCategoria() {
     try {
-        await buscar("/categoria", setCategoria, {
+        await buscar("/categorias", setCategoria, {
             headers: { Authorization: token }
         })               
     } catch (error: any) {
@@ -72,7 +72,7 @@ useEffect(() => {
 }, []);
 
 return (
-    <div className="flex pt-16 flex min-h-screen bg-[#f9f9f9]">
+    <div className="flex pt-16 min-h-screen bg-[#f9f9f9]">
     {/* Coluna do formulário */}
     <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-12">
         <h1 className="text-4xl font-bold text-[#FF4D38] mb-6 mt-10 text-center">
@@ -93,7 +93,7 @@ return (
             <input
             type="text"
             placeholder="Digite o nome do seu produto"
-            name="nome"
+            name="nomeProduto"
             className="w-full bg-[#f0f0f0] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
             value={produto.nomeProduto || ""}
             onChange={atualizarEstado}
@@ -110,7 +110,7 @@ return (
             <input
             type="text"
             placeholder="Digite a descrição do seu produto"
-            name="descricao"
+            name="descricaoProduto"
             className="w-full bg-[#f0f0f0] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
             value={produto.descricaoProduto || ""}
             onChange={atualizarEstado}
@@ -127,7 +127,7 @@ return (
             <input
             type="number"
             placeholder="Digite o preço do seu produto"
-            name="preco"
+            name="precoProduto"
             className="w-full bg-[#f0f0f0] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
             value={produto.precoProduto || ""}
             onChange={atualizarEstado}
@@ -143,7 +143,7 @@ return (
             </label>
             <input
             placeholder="Digite o peso do seu produto"
-            name="porcao"
+            name="tamanhoPorcao"
             className="w-full bg-[#f0f0f0] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
             value={produto.tamanhoPorcao || ""}
             onChange={ atualizarEstado}

@@ -103,7 +103,7 @@ return (
             <input
             type="text"
             placeholder="Digite o nome do produto"
-            name="nome"
+            name="nomeProduto"
             className="w-full bg-[#f0f0f0] pl-10 pr-4 py-3 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
             value={produto.nomeProduto || ""}
             onChange={atualizarEstado}
@@ -120,7 +120,7 @@ return (
             <input
             type="text"
             placeholder="Digite a descrição do produto"
-            name="descricao"
+            name="descricaoProduto"
             className="w-full bg-[#f0f0f0] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
             value={produto.descricaoProduto || ""}
             onChange={atualizarEstado}
@@ -154,7 +154,7 @@ return (
             <input
             type="number"
             placeholder="Digite o preco do produto"
-            name="preco"
+            name="precoProduto"
             className="w-full bg-[#f0f0f0] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
             value={produto.precoProduto || ""}
             onChange={atualizarEstado}

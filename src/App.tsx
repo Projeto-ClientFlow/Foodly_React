@@ -11,6 +11,11 @@ import SobreNos from './components/sobre_nos/SobreNos'
 import CadastrarProduto from './components/produtos/cadastrarproduto/CadastrarProduto'
 import DeletarProduto from './components/produtos/deletarproduto/DeletarProduto'
 import AtualizarProduto from './components/produtos/atualizarproduto/AtualizarProduto'
+import ListaCategorias from './components/categorias/listacategoria/ListaCategorias'
+import CadastrarCategoria from './components/categorias/cadastrarcategoria/CadastrarCategoria'
+import DeletarCategoria from './components/categorias/deletarcategoria/DeletarCategoria'
+import AtualizarCategoria from './components/categorias/atualizarcategoria/AtualizarCategoria'
+import NaoEncontrado from './components/paginanaoencontrada/NaoEncontrado'
 
 function App() {
   return (
@@ -30,6 +35,13 @@ function App() {
               <Route path="/cadastrarproduto" element={<CadastrarProduto />} />
               <Route path="/deletarproduto/:id" element={<DeletarProduto />} />
               <Route path="/atualizarproduto/:id" element={<AtualizarProduto />} />
+              <Route path="/categorias" element={<ListaCategorias />} />
+              <Route path="/cadastrarcategoria" element={<CadastrarCategoria />} />
+              <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
+              <Route path="/atualizarcategoria/:id" element={<AtualizarCategoria />} />
+
+              {/*Rota para página não encontrada*/}
+              <Route path="*" element={<NaoEncontrado />} />
             </Routes>
           </div>
           <Footer />

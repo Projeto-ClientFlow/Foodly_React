@@ -28,18 +28,6 @@ export function ToastAlerta(mensagem: string, tipo: string) {
                 progress: undefined,
             });
             break;
-
-            case
-                toast[tipo](mensagem, {
-                    position: "top-right",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                }):
-                break;
             
 
             case 'info':

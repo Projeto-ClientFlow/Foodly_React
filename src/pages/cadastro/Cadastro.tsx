@@ -58,7 +58,7 @@ function Cadastro() {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen bg-[#FFF5F3] font-sans">
+    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen bg-[#FFFFFF] font-sans">
       
       {/* Formulário - agora do lado esquerdo */}
       <div className="flex justify-center items-center h-full">

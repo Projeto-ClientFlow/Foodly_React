@@ -35,7 +35,7 @@ function Login() {
     }
     
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen bg-[#FFF5F3] font-sans">
+    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen bg-[#FFFFFFF] font-sans">
       
  
       <div className="flex justify-center items-center w-full h-screen px-10">

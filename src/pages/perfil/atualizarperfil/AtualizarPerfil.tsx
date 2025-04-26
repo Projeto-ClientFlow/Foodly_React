@@ -3,28 +3,38 @@ import { useNavigate } from "react-router-dom";
 import { RotatingLines } from "react-loader-spinner";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
+import Usuario from "../../../models/Usuario";
+import { atualizar, buscar } from "../../../services/Service";
 
 function EditarPerfil() {
   const navigate = useNavigate();
-  const { usuario} = useContext(AuthContext);
+  const [usuarioUpdate, setUsuarioUpdate] = useState<Usuario>({} as Usuario);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [confirmaSenha, setConfirmaSenha] = useState<string>('');
-  const [nome, setNome] = useState(usuario.nome);
-  const [email, setEmail] = useState(usuario.usuario);
-  const [foto, setFoto] = useState(usuario.foto);
+  const [confirmaSenha, setConfirmaSenha] = useState<string>("");
+  const { usuario, handleLogout } = useContext(AuthContext);
 
   useEffect(() => {
     if (!usuario.token) {
-      alert("Você precisa estar logado");
+      ToastAlerta("Você precisa estar logado", "info");
       navigate("/");
+    } else {
+      buscarUsuario();
     }
   }, [usuario.token, navigate]);
 
+  async function buscarUsuario() {
+    await buscar(`/usuarios/${usuario.id}`, setUsuarioUpdate, {
+      headers: {
+        Authorization: usuario.token,
+      },
+    });
+  }
+
   const atualizarEstado = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    if (name === 'nome') setNome(value);
-    if (name === 'usuario') setEmail(value);
-    if (name === 'foto') setFoto(value);
+    setUsuarioUpdate({
+      ...usuarioUpdate,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleConfirmarSenha = (e: ChangeEvent<HTMLInputElement>) => {
@@ -33,92 +43,112 @@ function EditarPerfil() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
+    if (
+      confirmaSenha === usuarioUpdate.senha &&
+      usuarioUpdate.senha.length >= 8
+    ) {
       setIsLoading(true);
       try {
-        const updatedUser = { ...usuario, nome, usuario: email, foto };
-        setUsuario(updatedUser); 
-        ToastAlerta("Perfil atualizado com sucesso!", "sucesso");
-        navigate("/perfil"); 
+        await atualizar("/usuarios/atualizar", usuarioUpdate, setUsuarioUpdate, {
+          headers: {
+            Authorization: usuario.token,
+          },
+        });
+        ToastAlerta("Perfil atualizado com sucesso! Faça login novamente.", "sucesso");
+        handleLogout(); 
+        navigate("/login"); 
       } catch (error) {
         ToastAlerta("Erro ao atualizar o perfil!", "erro");
       }
       setIsLoading(false);
     } else {
       alert("Dados inconsistentes! Verifique as informações.");
-      setConfirmaSenha('');
+      setConfirmaSenha("");
     }
   };
 
   return (
-    <div className="flex pt-16 min-h-screen bg-white">
-      {/* Formulário à esquerda */}
-      <div className="w-1/2 flex flex-col justify-center items-center px-12">
-
-            <h1 className="text-[#FF4D38] text-3xl font-bold mb-6 mt-10 text-center">Atualize seu Perfil</h1>
-       
-        <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
+    <div className="flex flex-col lg:flex-row min-h-[calc(100vh-120px)] bg-white">
+      {/* Seção do Formulário */}
+      <div className="w-full lg:w-1/2 flex justify-center p-6 lg:p-10">
+        <form 
+          onSubmit={handleSubmit} 
+          className="w-full max-w-md flex flex-col gap-4"
+        >
+          <h2 className="text-[#FF4D38] text-3xl lg:text-4xl font-bold mb-2 mt-[80px]">
+            Atualize seu Perfil
+          </h2>
 
           <div className="flex flex-col w-full">
-            <label htmlFor="nome" className="text-[#FF4D38] font-semibold">Nome</label>
+            <label htmlFor="nome" className="text-[#FF4D38] font-semibold mb-1">
+              Nome
+            </label>
             <input
               type="text"
               id="nome"
               name="nome"
               placeholder="Digite seu nome"
-              className="border border-[#FF4D38] bg-[#FFF5F3] rounded px-4 py-2 placeholder-[#666666]"
-              value={nome}
+              className="w-full bg-[#ffeeec] px-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
+              value={usuarioUpdate.nome}
               onChange={atualizarEstado}
             />
           </div>
 
           <div className="flex flex-col w-full">
-            <label htmlFor="usuario" className="text-[#FF4D38] font-semibold">E-mail</label>
+            <label htmlFor="usuario" className="text-[#FF4D38] font-semibold mb-1">
+              E-mail
+            </label>
             <input
               type="email"
               id="usuario"
               name="usuario"
               placeholder="Digite seu e-mail"
-              className="border border-[#FF4D38] bg-[#FFF5F3] rounded px-4 py-2 placeholder-[#666666]"
-              value={email}
+              className="w-full bg-[#ffeeec] px-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
+              value={usuarioUpdate.usuario}
               onChange={atualizarEstado}
             />
           </div>
 
           <div className="flex flex-col w-full">
-            <label htmlFor="foto" className="text-[#FF4D38] font-semibold">Foto</label>
+            <label htmlFor="foto" className="text-[#FF4D38] font-semibold mb-1">
+              Foto
+            </label>
             <input
               type="text"
               id="foto"
               name="foto"
               placeholder="Informe o link da sua foto"
-              className="border border-[#FF4D38] bg-[#FFF5F3] rounded px-4 py-2 placeholder-[#666666]"
-              value={foto}
+              className="w-full bg-[#ffeeec] px-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
+              value={usuarioUpdate.foto}
               onChange={atualizarEstado}
             />
           </div>
 
           <div className="flex flex-col w-full">
-            <label htmlFor="senha" className="text-[#FF4D38] font-semibold">Senha</label>
+            <label htmlFor="senha" className="text-[#FF4D38] font-semibold mb-1">
+              Senha
+            </label>
             <input
               type="password"
               id="senha"
               name="senha"
               placeholder="Digite sua nova senha"
-              className="border border-[#FF4D38] bg-[#FFF5F3] rounded px-4 py-2 placeholder-[#666666]"
-              value={usuario.senha}
+              className="w-full bg-[#ffeeec] px-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
+              value={usuarioUpdate.senha}
               onChange={atualizarEstado}
             />
           </div>
 
           <div className="flex flex-col w-full">
-            <label htmlFor="confirmarSenha" className="text-[#FF4D38] font-semibold">Confirme a sua senha</label>
+            <label htmlFor="confirmarSenha" className="text-[#FF4D38] font-semibold mb-1">
+              Confirme a sua senha
+            </label>
             <input
               type="password"
               id="confirmarSenha"
               name="confirmarSenha"
               placeholder="Digite sua senha novamente"
-              className="border border-[#FF4D38] bg-[#FFF5F3] rounded px-4 py-2 placeholder-[#666666]"
+              className="w-full bg-[#ffeeec] px-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
               value={confirmaSenha}
               onChange={handleConfirmarSenha}
             />
@@ -126,7 +156,7 @@ function EditarPerfil() {
 
           <button
             type="submit"
-            className="text-white bg-[#FF4D38] flex items-center justify-center h-10 w-[120px] rounded-lg shadow-md mt-4 mx-auto min-w-[150px] mb-7"
+            className="bg-[#FF4D38] text-white font-semibold px-8 py-3 rounded-xl border border-[#FF4D38]/50 hover:bg-[#e04430] mt-4 w-full sm:w-1/2 mx-auto flex justify-center items-center"
           >
             {isLoading ? (
               <RotatingLines
@@ -137,18 +167,18 @@ function EditarPerfil() {
                 visible={true}
               />
             ) : (
-              'Atualizar'
+              "Atualizar"
             )}
           </button>
         </form>
       </div>
 
-      {/* Imagem à direita */}
-      <div className="w-1/2 hidden md:flex justify-center items-center p-0">
+      {/* Seção da Imagem */}
+      <div className="w-full lg:w-1/2 h-[400px] lg:h-auto lg:min-h-[calc(100vh-120px)]">
         <img
           src="https://ik.imagekit.io/willa/pexels-dagmara-dombrovska-22732579-8020366.jpg?updatedAt=1745503482590"
           alt="Atualização do perfil"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
       </div>
     </div>

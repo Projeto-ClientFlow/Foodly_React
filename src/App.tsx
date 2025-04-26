@@ -14,6 +14,11 @@ import AtualizarProduto from './components/produtos/atualizarproduto/AtualizarPr
 import Perfil from './pages/perfil/Perfil'
 import EditarPerfil from './pages/perfil/atualizarperfil/AtualizarPerfil'
 import DeletarPerfil from './pages/perfil/deletarperfil/DeletarPerfil'
+import ListaCategorias from './components/categorias/listacategoria/ListaCategorias'
+import CadastrarCategoria from './components/categorias/cadastrarcategoria/CadastrarCategoria'
+import DeletarCategoria from './components/categorias/deletarcategoria/DeletarCategoria'
+import AtualizarCategoria from './components/categorias/atualizarcategoria/AtualizarCategoria'
+import NaoEncontrado from './components/paginanaoencontrada/NaoEncontrado'
 
 function App() {
   return (
@@ -23,19 +28,25 @@ function App() {
           <Navbar />
           <div className="min-h-[80vh]">
             <Routes>
-              <Route path="/" element={<Login />} />
+              <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/login" element={<Login />} />
               <Route path="/produtos" element={<ListarProdutos />} />
               <Route path="/sobre-nos" element={<SobreNos />} />
-              <Route path="/cadastrarproduto" element={<CadastrarProduto />} />
-              <Route path="/deletarproduto/:id" element={<DeletarProduto />} />
-              <Route path="/atualizarproduto/:id" element={<AtualizarProduto />} />
+              <Route path="/cadastrar-produto" element={<CadastrarProduto />} />
+              <Route path="/deletar-produto/:id" element={<DeletarProduto />} />
+              <Route path="/atualizar-produto/:id" element={<AtualizarProduto />} />
               <Route path="/perfil" element={<Perfil />} />
-              <Route path="/editar-perfil" element={<EditarPerfil />} />
+              <Route path="/editar-perfil/:id" element={<EditarPerfil />} />
               <Route path="/deletar-perfil" element={<DeletarPerfil />} />
+              <Route path="/categorias" element={<ListaCategorias />} />
+              <Route path="/cadastrar-categoria" element={<CadastrarCategoria />} />
+              <Route path="/deletar-categoria/:id" element={<DeletarCategoria />} />
+              <Route path="/atualizar-categoria/:id" element={<AtualizarCategoria />} />
+
+              {/*Rota para página não encontrada*/}
+              <Route path="*" element={<NaoEncontrado />} />
             </Routes>
           </div>
           <Footer />

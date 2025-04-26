@@ -25,13 +25,13 @@ function Navbar() {
           </Link>
 
           <div className="flex items-center gap-6 text-lg font-semibold">
-            <Link to="/cadastrarproduto" className="hover:underline">
+            <Link to="/cadastrar-produto" className="hover:underline">
               Cadastrar Produto
             </Link>
-            <Link to="/cadastrarcategoria" className="hover:underline">
+            <Link to="/cadastrar-categoria" className="hover:underline">
               Cadastrar Categoria
             </Link>
-            <Link to="/listarcategorias" className="hover:underline">
+            <Link to="/categorias" className="hover:underline">
               Ver Categorias
             </Link>
             <Link to="/perfil" className="hover:underline">

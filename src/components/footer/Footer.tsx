@@ -43,4 +43,3 @@ import {
   }
   
   export default Footer;
-  

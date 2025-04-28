@@ -44,7 +44,6 @@ function App() {
               <Route path="/cadastrar-categoria" element={<CadastrarCategoria />} />
               <Route path="/deletar-categoria/:id" element={<DeletarCategoria />} />
               <Route path="/atualizar-categoria/:id" element={<AtualizarCategoria />} />
-
               {/*Rota para página não encontrada*/}
               <Route path="*" element={<NaoEncontrado />} />
             </Routes>

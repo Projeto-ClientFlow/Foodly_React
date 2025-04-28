@@ -4,7 +4,7 @@ import { RotatingLines } from "react-loader-spinner";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 import Usuario from "../../../models/Usuario";
-import { atualizar, buscar } from "../../../services/Service";
+import { atualizarusuario, buscar } from "../../../services/Service";
 
 function EditarPerfil() {
   const navigate = useNavigate();
@@ -49,7 +49,7 @@ function EditarPerfil() {
     ) {
       setIsLoading(true);
       try {
-        await atualizar("/usuarios/atualizar", usuarioUpdate, setUsuarioUpdate, {
+        await atualizarusuario("/usuarios/atualizar", usuarioUpdate, setUsuarioUpdate, {
           headers: {
             Authorization: usuario.token,
           },

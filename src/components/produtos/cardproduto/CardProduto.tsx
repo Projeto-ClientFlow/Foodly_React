@@ -57,7 +57,7 @@ function CardProduto({ produto }) {
               Saiba Mais
             </button>
             <Link
-              to={`/atualizarproduto/${produto.id}`}
+              to={`/atualizar-produto/${produto.id}`}
               className="w-full text-white bg-[rgb(255,77,56)] flex items-center justify-center py-2 rounded-xl font-semibold"
             >
               Atualizar
@@ -110,14 +110,14 @@ function CardProduto({ produto }) {
 
             <div className="flex space-x-4">
               <Link 
-                to={`/atualizarproduto/${produto.id}`}
+                to={`/atualizar-produto/${produto.id}`}
                 onClick={() => setModalAberto(false)}
                 className="mt-4 w-full text-white bg-[#FF4D38] py-2 rounded-xl font-semibold text-center block"
               >
                 Atualizar
               </Link>
               <Link 
-                to={`/deletarproduto/${produto.id}`}
+                to={`/deletar-produto/${produto.id}`}
                 onClick={() => setModalAberto(false)}
                 className="mt-4 w-full text-white bg-black py-2 rounded-xl font-semibold text-center block"
               >

@@ -29,7 +29,7 @@ function retornar() {
 
 async function gerarNovoProduto(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
-
+    console.log(produto)
     if (!produto.nomeProduto?.trim()) {
     ToastAlerta("Preencha o nome do produto!", "warn");
     return;

@@ -15,13 +15,13 @@ function CardCategorias({ categoria }: CardCategoriasProps) {
             </div>
 
             <div className="flex gap-4 w-full justify-center mt-4">
-                <Link to={`/atualizarcategoria/${categoria.id}`}>
+                <Link to={`/atualizar-categoria/${categoria.id}`}>
                     <button className="bg-[#FF4D38] hover:bg-[#912C20] text-white font-semibold py-2 px-6 rounded-lg text-base transition-all cursor-pointer">
                         Editar
                     </button>
                 </Link>
 
-                <Link to={`/deletarcategoria/${categoria.id}`}>
+                <Link to={`/deletar-categoria/${categoria.id}`}>
                     <button className="bg-gray-600 hover:bg-gray-800 text-white font-semibold py-2 px-6 rounded-lg text-base transition-all cursor-pointer">
                         Deletar
                     </button>

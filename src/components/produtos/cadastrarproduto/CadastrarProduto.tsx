@@ -13,7 +13,7 @@ const [produto, setProduto] = useState<Produto>({} as Produto);
 const [categoria, setCategoria] = useState<Categoria[]>([]);
 const [isLoading, setIsLoading] = useState<boolean>(false);
 
-const { usuario, handleLogout } = useContext(AuthContext)
+const { usuario} = useContext(AuthContext)
     const token = usuario.token
 
 function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
@@ -190,12 +190,12 @@ return (
                 </div>
 
         <button
-            className="text-white bg-[#FF4D38] flex items-center justify-center py-2 px-8 rounded-xl shadow-md mt-4 mx-auto min-w-[150px] mb-6"
+            className="text-white bg-[#FF4D38] flex items-center justify-center py-2 px-8 rounded-xl shadow-md mt-4 mx-auto min-w-[150px] mb-6 cursor-pointer hover:bg-[#912C20]"
             type="submit"
             disabled={isLoading}
         >
             {isLoading ? (
-            <ThreeDots color="white" width="30" visible={true} />
+            <ThreeDots color="white" width="20" height="20" visible={true} />
             ) : (
             <span>Cadastrar</span>
             )}

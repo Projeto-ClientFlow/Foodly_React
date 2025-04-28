@@ -52,13 +52,13 @@ function CardProduto({ produto }) {
           <div className="flex space-x-4 p-4">
             <button
               onClick={() => setModalAberto(true)}
-              className="w-full border border-[#FF4D38] text-[#FF4D38] bg-[rgba(255,77,56,0.04)] flex items-center justify-center py-2 rounded-xl font-semibold"
+              className="w-full border border-[#FF4D38] text-[#FF4D38] bg-[rgba(255,77,56,0.04)] flex items-center justify-center py-2 rounded-xl font-semibold cursor-pointer hover:bg-[rgba(255,77,56,0.30)]"
             >
               Saiba Mais
             </button>
             <Link
               to={`/atualizar-produto/${produto.id}`}
-              className="w-full text-white bg-[rgb(255,77,56)] flex items-center justify-center py-2 rounded-xl font-semibold"
+              className="w-full text-white bg-[rgb(255,77,56)] hover:bg-[#ff7660] flex items-center justify-center py-2 rounded-xl font-semibold"
             >
               Atualizar
             </Link>
@@ -112,14 +112,14 @@ function CardProduto({ produto }) {
               <Link 
                 to={`/atualizar-produto/${produto.id}`}
                 onClick={() => setModalAberto(false)}
-                className="mt-4 w-full text-white bg-[#FF4D38] py-2 rounded-xl font-semibold text-center block"
+                className="mt-4 w-full text-white bg-[#FF4D38] hover:bg-[#912C20] py-2 rounded-xl font-semibold text-center block"
               >
                 Atualizar
               </Link>
               <Link 
                 to={`/deletar-produto/${produto.id}`}
                 onClick={() => setModalAberto(false)}
-                className="mt-4 w-full text-white bg-black py-2 rounded-xl font-semibold text-center block"
+                className="mt-4 w-full text-white bg-gray-600 hover:bg-gray-800 py-2 rounded-xl font-semibold text-center block"
               >
                 Deletar
               </Link>

@@ -45,13 +45,13 @@ function Perfil() {
         <div className="flex justify-center gap-4">
           <button
             onClick={() => navigate(`/editar-perfil/${usuario.id}`)}
-            className="bg-[#FF4D38] hover:bg-[#e64532] text-white font-semibold px-6 py-2 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38] transition"
+            className="cursor-pointer bg-[#FF4D38] hover:bg-[#912C20] text-white font-semibold px-6 py-2 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38] transition"
           >
             Editar
           </button>
           <button
             onClick={() => navigate("/deletar-perfil")}
-            className="bg-black hover:bg-gray-800 text-white font-semibold px-6 py-2 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38] transition"
+            className="cursor-pointer bg-black hover:bg-gray-800 text-white font-semibold px-6 py-2 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38] transition"
           >
             Deletar
           </button>

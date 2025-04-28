@@ -54,9 +54,9 @@ function CadastrarCategoria() {
     }
 
     return (
-        <div className="flex pt-[100px] min-h-screen bg-[#f9f9f9]">
-            <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-12">
-                <h1 className="text-4xl font-bold text-[#FF4D38] mb-6 mt-10 text-Henter">
+        <div className="pt-16 flex min-h-screen bg-[#f9f9f9]">
+            <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-12 pb-40">
+                <h1 className="text-4xl font-bold text-[#FF4D38] mb-6 mt-10 text-center">
                     Cadastre uma categoria
                 </h1>
 
@@ -69,7 +69,7 @@ function CadastrarCategoria() {
                             type="text"
                             placeholder="Digite o nome da categoria"
                             name="descricao"
-                            className="w-full bg-[#FFEEEC] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
+                            className="w-full bg-[#f0f0f0] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
                             value={categoria.descricao || ""}
                             onChange={atualizarEstado}
                         />

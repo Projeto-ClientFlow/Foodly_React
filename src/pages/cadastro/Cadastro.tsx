@@ -1,20 +1,20 @@
-import { useState, useEffect, ChangeEvent, FormEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Usuario from '../../models/Usuario';
-import { cadastrarUsuario } from '../../services/Service';
-import './Cadastro.css';
-import { RotatingLines } from 'react-loader-spinner';
+import { useState, useEffect, ChangeEvent, FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
+import Usuario from "../../models/Usuario";
+import { cadastrarUsuario } from "../../services/Service";
+import "./Cadastro.css";
+import { ThreeDots } from "react-loader-spinner";
 
 function Cadastro() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [confirmaSenha, setConfirmaSenha] = useState<string>('');
+  const [confirmaSenha, setConfirmaSenha] = useState<string>("");
   const [usuario, setUsuario] = useState<Usuario>({
     id: null,
-    nome: '',
-    usuario: '',
-    senha: '',
-    foto: ''
+    nome: "",
+    usuario: "",
+    senha: "",
+    foto: "",
   });
 
   useEffect(() => {
@@ -24,13 +24,13 @@ function Cadastro() {
   }, [usuario]);
 
   function retornar() {
-    navigate('/login');
+    navigate("/login");
   }
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setUsuario({
       ...usuario,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   }
 
@@ -44,29 +44,37 @@ function Cadastro() {
     if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
       setIsLoading(true);
       try {
-        await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
-        alert('Usuário cadastrado com sucesso!');
+        await cadastrarUsuario(`/cadastro`, usuario, setUsuario);
+        alert("Usuário cadastrado com sucesso!");
       } catch (error) {
-        alert('Erro ao cadastrar o usuário!');
+        alert("Erro ao cadastrar o usuário!");
       }
       setIsLoading(false);
     } else {
-      alert('Dados do usuário inconsistentes! Verifique as informações do cadastro.');
-      setUsuario({ ...usuario, senha: '' });
-      setConfirmaSenha('');
+      alert(
+        "Dados do usuário inconsistentes! Verifique as informações do cadastro."
+      );
+      setUsuario({ ...usuario, senha: "" });
+      setConfirmaSenha("");
     }
   }
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 h-screen bg-[#FFFFFF] font-sans">
-      
       {/* Formulário - agora do lado esquerdo */}
       <div className="flex justify-center items-center h-full">
-        <form onSubmit={cadastrarNovoUsuario} className="flex flex-col w-3/4 gap-4">
-          <h2 className="text-[#FF4D38] text-4xl font-bold mb-4">Crie sua conta</h2>
+        <form
+          onSubmit={cadastrarNovoUsuario}
+          className="flex flex-col w-3/4 gap-4"
+        >
+          <h2 className="text-[#FF4D38] text-4xl font-bold mb-4">
+            Crie sua conta
+          </h2>
 
           <div className="flex flex-col w-full">
-            <label htmlFor="nome" className="text-[#FF4D38] font-semibold">Nome</label>
+            <label htmlFor="nome" className="text-[#FF4D38] font-semibold">
+              Nome
+            </label>
             <input
               type="text"
               id="nome"
@@ -79,7 +87,9 @@ function Cadastro() {
           </div>
 
           <div className="flex flex-col w-full">
-            <label htmlFor="usuario" className="text-[#FF4D38] font-semibold">E-mail</label>
+            <label htmlFor="usuario" className="text-[#FF4D38] font-semibold">
+              E-mail
+            </label>
             <input
               type="text"
               id="usuario"
@@ -92,7 +102,9 @@ function Cadastro() {
           </div>
 
           <div className="flex flex-col w-full">
-            <label htmlFor="foto" className="text-[#FF4D38] font-semibold">Foto</label>
+            <label htmlFor="foto" className="text-[#FF4D38] font-semibold">
+              Foto
+            </label>
             <input
               type="text"
               id="foto"
@@ -105,7 +117,9 @@ function Cadastro() {
           </div>
 
           <div className="flex flex-col w-full">
-            <label htmlFor="senha" className="text-[#FF4D38] font-semibold">Senha</label>
+            <label htmlFor="senha" className="text-[#FF4D38] font-semibold">
+              Senha
+            </label>
             <input
               type="password"
               id="senha"
@@ -118,7 +132,12 @@ function Cadastro() {
           </div>
 
           <div className="flex flex-col w-full">
-            <label htmlFor="confirmarSenha" className="text-[#FF4D38] font-semibold">Confirme a sua senha</label>
+            <label
+              htmlFor="confirmarSenha"
+              className="text-[#FF4D38] font-semibold"
+            >
+              Confirme a sua senha
+            </label>
             <input
               type="password"
               id="confirmarSenha"
@@ -132,18 +151,12 @@ function Cadastro() {
 
           <button
             type="submit"
-            className="bg-[#FF4D38] text-white font-semibold px-8 py-2 rounded hover:bg-[#e04430] mt-2 w-full flex justify-center"
+            className="hover:bg-[#912C20] bg-[#FF4D38] text-white font-semibold px-8 py-2 rounded hover:bg-[#e04430] mt-2 w-full flex justify-center cursor-pointer"
           >
             {isLoading ? (
-              <RotatingLines
-                strokeColor="white"
-                strokeWidth="5"
-                animationDuration="0.75"
-                width="24"
-                visible={true}
-              />
+              <ThreeDots color="white" width="40" height="20" visible={true} />
             ) : (
-              'Cadastrar'
+              "Cadastrar"
             )}
           </button>
         </form>

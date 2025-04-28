@@ -97,7 +97,7 @@ function ListaCategorias() {
                                 <input
                                     type="text"
                                     placeholder="Filtre sua busca"
-                                    className="w-full bg-[#FFEEEC] pl-10 pr-4 py-3 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
+                                    className="w-full bg-[#f0f0f0] pl-10 pr-4 py-3 rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
                                     value={busca}
                                     onChange={(e) => setBusca(e.target.value)}
                                 />
@@ -105,7 +105,7 @@ function ListaCategorias() {
 
                             {/* Botão de buscar */}
                             <button
-                                className="text-white bg-[#FF4D38] flex items-center justify-center py-3 px-6 rounded-xl shadow-md cursor-pointer"
+                                className="text-white hover:bg-[#912C20] bg-[#FF4D38] flex items-center justify-center py-3 px-6 rounded-xl shadow-md cursor-pointer"
                                 onClick={filtrarCategoria}
                             >
                                 <span className="font-semibold">Buscar</span>

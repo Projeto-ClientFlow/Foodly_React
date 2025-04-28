@@ -39,7 +39,7 @@ function Navbar() {
             </Link>
             <button
               onClick={logout}
-              className="bg-[#FF4D38] text-white py-2 px-4 rounded-lg hover:opacity-90 transition"
+              className="bg-[#FF4D38] hover:bg-[#912C20] cursor-pointer text-white py-2 px-4 rounded-lg hover:opacity-90 transition"
             >
               Sair
             </button>

@@ -2,7 +2,7 @@ import { useState, useEffect, ChangeEvent, FormEvent, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { RotatingLines } from "react-loader-spinner";
 import { AuthContext } from "../../../contexts/AuthContext";
-import { ToastAlerta } from "../../../utils/ToastAlerta";
+import { ToastAlerta } from '../../../utils/ToastAlerta';
 import Usuario from "../../../models/Usuario";
 import { atualizar, buscar } from "../../../services/Service";
 
@@ -62,14 +62,14 @@ function EditarPerfil() {
       }
       setIsLoading(false);
     } else {
-      alert("Dados inconsistentes! Verifique as informações.");
+      ToastAlerta("Dados inconsistentes! Verifique as informações.", "info");
       setConfirmaSenha("");
     }
   };
 
   return (
     <div className="flex flex-col lg:flex-row min-h-[calc(100vh-120px)] bg-white">
-      {/* Seção do Formulário */}
+      
       <div className="w-full lg:w-1/2 flex justify-center p-6 lg:p-10">
         <form 
           onSubmit={handleSubmit} 
@@ -173,7 +173,6 @@ function EditarPerfil() {
         </form>
       </div>
 
-      {/* Seção da Imagem */}
       <div className="w-full lg:w-1/2 h-[400px] lg:h-auto lg:min-h-[calc(100vh-120px)]">
         <img
           src="https://ik.imagekit.io/willa/pexels-dagmara-dombrovska-22732579-8020366.jpg?updatedAt=1745503482590"

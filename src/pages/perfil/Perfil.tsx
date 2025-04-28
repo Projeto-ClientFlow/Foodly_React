@@ -32,14 +32,11 @@ function Perfil() {
       </div>
 
       <div className="w-full max-w-3xl px-4 py-12 text-center">
-        <p className="text-lg font-semibold mb-2">
+        <p className="text-lg font-regular mb-2">
           <strong>Nome:</strong> {usuario.nome}
         </p>
-        <p className="text-lg font-semibold mb-2">
+        <p className="text-lg font-regular mb-12">
           <strong>E-mail:</strong> {usuario.usuario}
-        </p>
-        <p className="text-lg font-semibold mb-6">
-          <strong>Foto:</strong> {usuario.foto}
         </p>
 
         <div className="flex justify-center gap-4">
@@ -51,7 +48,7 @@ function Perfil() {
           </button>
           <button
             onClick={() => navigate("/deletar-perfil")}
-            className="bg-black hover:bg-gray-800 text-white font-semibold px-6 py-2 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38] transition"
+            className="bg-gray-600 hover:bg-gray-800 text-white font-semibold px-6 py-2 rounded-xl  focus:outline-none focus:ring-2 focus:ring-[#FF4D38] transition"
           >
             Deletar
           </button>

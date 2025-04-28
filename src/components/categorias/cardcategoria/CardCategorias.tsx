@@ -16,7 +16,7 @@ function CardCategorias({ categoria }: CardCategoriasProps) {
 
             <div className="flex gap-4 w-full justify-center mt-4">
                 <Link to={`/atualizar-categoria/${categoria.id}`}>
-                    <button className="bg-[#FF4D38] hover:bg-[#912C20] text-white font-semibold py-2 px-6 rounded-lg text-base transition-all cursor-pointer">
+                    <button className="bg-[#FF4D38] hover:bg-[#e04430] text-white font-semibold py-2 px-6 rounded-lg text-base transition-all cursor-pointer">
                         Editar
                     </button>
                 </Link>

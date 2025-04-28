@@ -77,7 +77,7 @@ function CadastrarCategoria() {
 
                     <button
                         type="submit"
-                        className="bg-[#FF4D38] text-white font-semibold px-6 rounded-lg hover:bg-[#912C20] transition-colors mx-auto block cursor-pointer min-w-[150px] flex justify-center items-center h-12"
+                        className="bg-[#FF4D38] text-white font-semibold px-6 rounded-lg hover:bg-[#e04430] transition-colors mx-auto block cursor-pointer min-w-[150px] flex justify-center items-center h-12"
                     >
                         {isLoading ? (
                             <ThreeDots

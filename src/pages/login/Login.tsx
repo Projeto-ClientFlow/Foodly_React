@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
@@ -85,7 +85,7 @@ function Login() {
 
           <p className="text-center text-sm text-[#666666]">
             Ainda não tem conta?<br />
-            Clique aqui e <a href="/cadastro" className="text-[#FF4D38] font-semibold underline">Cadastre-se!</a>
+            Clique aqui e <Link to="/cadastro" className="text-[#FF4D38] font-semibold underline">Cadastre-se!</Link>
           </p>
         </form>
       </div>

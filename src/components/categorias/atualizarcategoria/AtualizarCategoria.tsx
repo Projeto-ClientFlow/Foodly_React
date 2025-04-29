@@ -54,7 +54,7 @@ function AtualizarCategoria() {
                 { ...categoria, id: Number(id) },
                 { headers: { Authorization: token } }
             );
-            ToastAlerta("A categoria foi atualizada com sucesso!", "succes");
+            ToastAlerta("A categoria foi atualizada com sucesso!", "sucesso");
             retornar();
         } catch (error: any) {
             ToastAlerta("Erro ao atualizar categoria.", "erro");
@@ -71,7 +71,7 @@ function AtualizarCategoria() {
                     headers: { Authorization: token },
                 });
             } catch (error) {
-                ToastAlerta("Erro ao buscar categorias!", "error");
+                ToastAlerta("Erro ao buscar categorias!", "erro");
             }
         }
 
@@ -79,7 +79,7 @@ function AtualizarCategoria() {
     }, [token]);
 
     return (
-        <div className="flex pt-[100px] min-h-screen">
+        <div className="flex min-h-screen">
             <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-12">
                 <h1 className="text-4xl font-bold text-[#FF4D38] mb-6 mt-10 text-Henter">
                     Atualizar categoria
@@ -102,22 +102,19 @@ function AtualizarCategoria() {
 
                     <button
                         type="submit"
-                        className="bg-[#FF4D38] text-white font-semibold px-6 rounded-lg hover:bg-[#912C20] transition-colors mx-auto block cursor-pointer min-w-[150px] flex justify-center items-center h-12"
+                        className="text-white bg-[#FF4D38] flex items-center justify-center py-2 px-8 rounded-xl shadow-md mt-4 mx-auto min-w-[150px] mb-6 cursor-pointer hover:bg-[#912C20]"
                     >
                         {isLoading ? (
                             <ThreeDots
                                 color="white"
-                                width="40"
+                                width="20"
                                 height="20"
                                 visible={true}
                             />
                         ) : (
-                            'Atualizar'
+                            <span>Atualizar</span>
                         )}
-                    </button>
-
-
-
+                    </button> 
                 </form>
             </div>
 
@@ -125,7 +122,7 @@ function AtualizarCategoria() {
                 <img
                     src="https://ik.imagekit.io/willa/melissa-di-rocco-wIVK756L0VU-unsplash.jpg?updatedAt=1745522160250"
                     alt="Cadastro do Produto"
-                    className="w-full h-screen object-cover"
+                    className="w-full h-[105vh] object-cover object-bottom"
                 />
             </div>
         </div>

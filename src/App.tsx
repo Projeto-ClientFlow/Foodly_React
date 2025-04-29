@@ -20,10 +20,14 @@ import DeletarCategoria from './components/categorias/deletarcategoria/DeletarCa
 import AtualizarCategoria from './components/categorias/atualizarcategoria/AtualizarCategoria'
 import NaoEncontrado from './components/paginanaoencontrada/NaoEncontrado'
 
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
+
 function App() {
   return (
     <>
       <AuthProvider>
+        <ToastContainer/>
         <BrowserRouter>
           <Navbar />
           <div className="min-h-[80vh]">

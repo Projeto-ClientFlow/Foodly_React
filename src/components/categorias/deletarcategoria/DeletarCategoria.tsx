@@ -2,7 +2,7 @@ import { useContext, useEffect, useState, useCallback } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { deletar, buscar } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
-import { RotatingLines } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import Categoria from "../../../models/Categoria";
 import { AuthContext } from "../../../contexts/AuthContext";
 
@@ -81,17 +81,17 @@ function DeletarCategoria() {
                          className="w-full text-white bg-gray-600 hover:bg-gray-800 cursor-pointer flex items-center justify-center py-2 rounded-[10px]  font-semibold"
                          disabled={isLoading}
                          >
+                            
                          {isLoading ? (
-                             <RotatingLines
-                             strokeColor="white"
-                             strokeWidth="5"
-                             animationDuration="0.75"
-                             width="24"
-                             visible={true}
-                             />
-                         ) : (
-                             <span>Deletar</span>
-                         )}
+                            <ThreeDots
+                                color="white"
+                                width="20"
+                                height="20"
+                                visible={true}
+                            />
+                        ) : (
+                            'Deletar'
+                        )}
                     </button>
                 </div>
             </div>

@@ -13,7 +13,7 @@ const [produto, setProduto] = useState<Produto>({} as Produto);
 const [categoria, setCategoria] = useState<Categoria[]>([]);
 const [isLoading, setIsLoading] = useState<boolean>(false);
 
-const { usuario, handleLogout } = useContext(AuthContext)
+const { usuario} = useContext(AuthContext)
     const token = usuario.token
 
 function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
@@ -31,7 +31,7 @@ async function gerarNovoProduto(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
     console.log(produto)
     if (!produto.nomeProduto?.trim()) {
-    ToastAlerta("Preencha o nome do produto!", "warn");
+    ToastAlerta("Preencha o nome do produto!", "aviso");
     return;
     }
 
@@ -44,13 +44,13 @@ async function gerarNovoProduto(e: ChangeEvent<HTMLFormElement>) {
         },
     });
     
-    ToastAlerta("O produto foi cadastrado com sucesso!", "success");
+    ToastAlerta("O produto foi cadastrado com sucesso!", "sucesso");
 
     setTimeout(() => {
         retornar(); // espera um pouco pra deixar o toast aparecer
     }, 1500);
     } catch (error: any) {
-    ToastAlerta("Erro ao cadastrar o produto.", "error");
+    ToastAlerta("Erro ao cadastrar o produto.", "erro");
     console.error(error);
     } finally {
     setIsLoading(false);
@@ -64,7 +64,7 @@ useEffect(() => {
             headers: { Authorization: token }
         })               
     } catch (error: any) {
-        ToastAlerta("Erro ao buscar categorias!", "error");
+        ToastAlerta("Erro ao buscar categorias!", "erro");
     }
     }
 
@@ -72,7 +72,7 @@ useEffect(() => {
 }, []);
 
 return (
-    <div className="flex pt-16 min-h-screen bg-[#f9f9f9]">
+    <div className="flex pt-16 min-h-screen bg-[#ffffff]">
     {/* Coluna do formulário */}
     <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-12">
         <h1 className="text-4xl font-bold text-[#FF4D38] mb-6 mt-10 text-center">
@@ -94,7 +94,7 @@ return (
             type="text"
             placeholder="Digite o nome do seu produto"
             name="nomeProduto"
-            className="w-full bg-[#f0f0f0] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
+            className="w-full bg-[#ffeeec] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
             value={produto.nomeProduto || ""}
             onChange={atualizarEstado}
             />
@@ -111,7 +111,7 @@ return (
             type="text"
             placeholder="Digite a descrição do seu produto"
             name="descricaoProduto"
-            className="w-full bg-[#f0f0f0] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
+            className="w-full bg-[#ffeeec] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
             value={produto.descricaoProduto || ""}
             onChange={atualizarEstado}
             />
@@ -128,7 +128,7 @@ return (
             type="number"
             placeholder="Digite o preço do seu produto"
             name="precoProduto"
-            className="w-full bg-[#f0f0f0] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
+            className="w-full bg-[#ffeeec] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
             value={produto.precoProduto || ""}
             onChange={atualizarEstado}
             />
@@ -144,7 +144,7 @@ return (
             <input
             placeholder="Digite o peso do seu produto"
             name="tamanhoPorcao"
-            className="w-full bg-[#f0f0f0] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
+            className="w-full bg-[#ffeeec] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
             value={produto.tamanhoPorcao || ""}
             onChange={ atualizarEstado}
             />   
@@ -159,7 +159,7 @@ return (
             <input
             placeholder="Informe o link da foto do produto"
             name="foto"
-            className="w-full bg-[#f0f0f0] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
+            className="w-full bg-[#ffeeec] pl-4 pr-4 py-3 rounded-xl border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
             value={produto.foto || ""}
             onChange={ atualizarEstado}
             />   
@@ -173,7 +173,7 @@ return (
                     </label>
                     <select
                         name="categoria"
-                        className="w-full bg-[#f0f0f0] pl-4 pr-4 py-3 rounded-xl text-gray-500 border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
+                        className="w-full bg-[#ffeeec] pl-4 pr-4 py-3 rounded-xl text-gray-500 border border-[#FF4D38]/50 focus:outline-none focus:ring-2 focus:ring-[#FF4D38]"
                         value={produto.categoria?.id || ""}
                         onChange={(e) => {
                             const categoriaSelecionada = categoria.find(cat => cat.id === Number(e.target.value));
@@ -190,12 +190,12 @@ return (
                 </div>
 
         <button
-            className="text-white bg-[#FF4D38] flex items-center justify-center py-2 px-8 rounded-xl shadow-md mt-4 mx-auto min-w-[150px] mb-6"
+            className="text-white bg-[#FF4D38] flex items-center justify-center py-2 px-8 rounded-xl shadow-md mt-4 mx-auto min-w-[150px] mb-6 cursor-pointer hover:bg-[#912C20]"
             type="submit"
             disabled={isLoading}
         >
             {isLoading ? (
-            <ThreeDots color="white" width="30" visible={true} />
+            <ThreeDots color="white" width="20" height="20" visible={true} />
             ) : (
             <span>Cadastrar</span>
             )}

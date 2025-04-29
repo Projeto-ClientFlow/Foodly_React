@@ -54,7 +54,7 @@ function CadastrarCategoria() {
     }
 
     return (
-        <div className="flex pt-[100px] min-h-screen bg-[#f9f9f9]">
+        <div className="flex min-h-screen bg-[#ffffff]">
             <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-12">
                 <h1 className="text-4xl font-bold text-[#FF4D38] mb-6 mt-10 text-Henter">
                     Cadastre uma categoria
@@ -77,12 +77,12 @@ function CadastrarCategoria() {
 
                     <button
                         type="submit"
-                        className="bg-[#FF4D38] text-white font-semibold px-6 rounded-lg hover:bg-[#e04430] transition-colors mx-auto block cursor-pointer min-w-[150px] flex justify-center items-center h-12"
+                        className="text-white bg-[#FF4D38] flex items-center justify-center py-2 px-8 rounded-xl shadow-md mt-4 mx-auto min-w-[150px] mb-6 cursor-pointer hover:bg-[#912C20]"
                     >
                         {isLoading ? (
                             <ThreeDots
                                 color="white"
-                                width="40"
+                                width="20"
                                 height="20"
                                 visible={true}
                             />
@@ -100,7 +100,7 @@ function CadastrarCategoria() {
                 <img
                     src="https://ik.imagekit.io/willa/bob-bowie-l-y1LxPLYOY-unsplash.jpg?updatedAt=1745522160250"
                     alt="Cadastro do Produto"
-                    className="w-full h-screen object-cover"
+                    className="w-full h-[105vh] object-cover object-bottom"
                 />
             </div>
         </div>

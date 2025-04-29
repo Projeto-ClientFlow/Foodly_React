@@ -13,7 +13,7 @@ style: {
     fontWeight: "bold",
     fontSize: "0.9rem",
     color: "#fff",
-},
+    },
 };
 
 export function ToastAlerta(mensagem: string, tipo: string) {
@@ -32,7 +32,7 @@ switch (tipo) {
     });
     break;
 
-    case "warn":
+    case "aviso":
     toast.warn(mensagem, {
         ...toastConfig,
         style: { ...toastConfig.style, background: "#FF8000" }, // Laranjinha pra aviso
@@ -46,5 +46,5 @@ switch (tipo) {
         style: { ...toastConfig.style, background: "#0061FF" }, // Azulzinho para informação
     });
     break;
-}
+    }
 }

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Usuario from '../../models/Usuario';
 import { cadastrarUsuario } from '../../services/Service';
 import './Cadastro.css';
-import { RotatingLines } from 'react-loader-spinner';
+import { ThreeDots } from 'react-loader-spinner';
 import { ToastAlerta } from '../../utils/ToastAlerta';
 
 function Cadastro() {
@@ -52,7 +52,7 @@ function Cadastro() {
       }
       setIsLoading(false);
     } else {
-      alert('Dados do usuário inconsistentes! Verifique as informações do cadastro.');
+      ToastAlerta('Dados do usuário inconsistentes! Verifique as informações do cadastro.', 'aviso');
       setUsuario({ ...usuario, senha: '' });
       setConfirmaSenha('');
     }
@@ -135,15 +135,14 @@ function Cadastro() {
             className="bg-[#FF4D38] text-white font-semibold text-1xl px-12 py-3 rounded-xl border border-[#FF4D38]/50 hover:bg-[#e04430] mt-4 mx-auto flex justify-center"
           >
             {isLoading ? (
-              <RotatingLines
-                strokeColor="white"
-                strokeWidth="5"
-                animationDuration="0.75"
-                width="24"
+              <ThreeDots
+                color="white"
+                width="20"
+                height="20"
                 visible={true}
               />
             ) : (
-              'Cadastrar'
+                'Cadastrar'
             )}
           </button>
         </form>

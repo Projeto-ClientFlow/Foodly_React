@@ -3,7 +3,7 @@ import './Login.css';
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import UsuarioLogin from '../../models/UsuarioLogin';
-import { RotatingLines } from 'react-loader-spinner';
+import { ThreeDots } from 'react-loader-spinner';
 
 function Login() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ function Login() {
 
   useEffect(() => {
     if (usuario.token !== "") {
-      navigate('/home');
+      navigate('/produtos');
     }
   }, [usuario]);
 
@@ -64,19 +64,18 @@ function Login() {
 
           <button
   type="submit"
-  className="bg-[#FF4D38] text-white font-semibold text-1xl px-15 py-2 rounded-xl border border-[#FF4D38]/50 hover:bg-[#e04430] mt-2 w-max mx-auto flex justify-center"
+  className="text-white bg-[#FF4D38] flex items-center justify-center py-2 px-8 rounded-xl shadow-md mt-4 mx-auto min-w-[150px] mb-6 cursor-pointer hover:bg-[#912C20]"
 >
   {isLoading ? (
-    <RotatingLines
-      strokeColor="white"
-      strokeWidth="5"
-      animationDuration="0.75"
-      width="24"
+    <ThreeDots
+      color="white"
+      width="20"
+      height="20"
       visible={true}
     />
-  ) : (
-    <span>Entrar</span>
-  )}
+    ) : (
+      'Entrar'
+    )}
 </button>
 
 <p className="text-center text-lg text-[#666666]">

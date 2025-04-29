@@ -156,7 +156,7 @@ function EditarPerfil() {
 
           <button
             type="submit"
-            className="bg-[#FF4D38] text-white font-semibold px-8 py-3 rounded-xl border border-[#FF4D38]/50 hover:bg-[#e04430] mt-4 w-full sm:w-1/2 mx-auto flex justify-center items-center cursor-pointer"
+            className="text-white bg-[#FF4D38] flex items-center justify-center py-2 px-8 rounded-xl shadow-md mt-4 mx-auto min-w-[150px] mb-6 cursor-pointer hover:bg-[#e04430]"
           >
             {isLoading ? (
               <ThreeDots

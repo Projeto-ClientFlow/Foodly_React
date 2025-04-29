@@ -210,7 +210,7 @@ return (
 
         <div className="flex justify-center gap-4 mt-4 mb-7">
             <button
-            className="text-white bg-[#FF4D38] hover:bg-[#912C20] flex items-center justify-center h-10 w-[120px] rounded-lg shadow-md min-w-[150px]"
+            className="text-white bg-[#FF4D38] hover:bg-[#e04430] flex items-center justify-center h-10 w-[120px] rounded-lg shadow-md min-w-[150px] cursor-pointer"
             type="submit"
             disabled={isLoading}
             >

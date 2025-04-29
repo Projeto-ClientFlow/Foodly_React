@@ -132,7 +132,7 @@ function Cadastro() {
 
           <button
             type="submit"
-            className="bg-[#FF4D38] text-white font-semibold text-1xl px-12 py-3 rounded-xl border border-[#FF4D38]/50 hover:bg-[#e04430] mt-4 mx-auto flex justify-center"
+            className="bg-[#FF4D38] text-white font-semibold text-1xl px-12 py-3 rounded-xl border border-[#FF4D38]/50 hover:bg-[#e04430]  mt-4 mx-auto flex justify-center"
           >
             {isLoading ? (
               <ThreeDots

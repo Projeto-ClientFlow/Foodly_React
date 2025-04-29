@@ -1,6 +1,6 @@
 import { useState, useEffect, ChangeEvent, FormEvent, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { RotatingLines } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 import Usuario from "../../../models/Usuario";
@@ -68,14 +68,14 @@ function EditarPerfil() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row min-h-[calc(100vh-120px)] bg-white">
+    <div className="flex min-h-screen">
       {/* Seção do Formulário */}
-      <div className="w-full lg:w-1/2 flex justify-center p-6 lg:p-10">
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-12">
         <form 
           onSubmit={handleSubmit} 
           className="w-full max-w-md flex flex-col gap-4"
         >
-          <h2 className="text-[#FF4D38] text-3xl lg:text-4xl font-bold mb-2 mt-[80px]">
+          <h2 className="text-[#FF4D38] text-3xl lg:text-4xl font-bold mb-2 mt-[80px] text-center">
             Atualize seu Perfil
           </h2>
 
@@ -156,29 +156,28 @@ function EditarPerfil() {
 
           <button
             type="submit"
-            className="bg-[#FF4D38] text-white font-semibold px-8 py-3 rounded-xl border border-[#FF4D38]/50 hover:bg-[#e04430] mt-4 w-full sm:w-1/2 mx-auto flex justify-center items-center"
+            className="bg-[#FF4D38] text-white font-semibold px-8 py-3 rounded-xl border border-[#FF4D38]/50 hover:bg-[#e04430] mt-4 w-full sm:w-1/2 mx-auto flex justify-center items-center cursor-pointer"
           >
             {isLoading ? (
-              <RotatingLines
-                strokeColor="white"
-                strokeWidth="5"
-                animationDuration="0.75"
-                width="24"
+              <ThreeDots
+                color="white"
+                width="20"
+                height="20"
                 visible={true}
               />
             ) : (
-              "Atualizar"
+              <span>Atualizar</span>
             )}
           </button>
         </form>
       </div>
 
       {/* Seção da Imagem */}
-      <div className="w-full lg:w-1/2 h-[400px] lg:h-auto lg:min-h-[calc(100vh-120px)]">
+      <div className="w-1/2 hidden md:flex justify-center items-center  p-0">
         <img
           src="https://ik.imagekit.io/willa/pexels-dagmara-dombrovska-22732579-8020366.jpg?updatedAt=1745503482590"
           alt="Atualização do perfil"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-bottom"
         />
       </div>
     </div>

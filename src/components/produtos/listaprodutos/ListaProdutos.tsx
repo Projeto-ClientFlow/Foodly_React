@@ -104,7 +104,7 @@ function ListarProdutos() {
 
                             {/* Botão de buscar */}
                             <button
-                                className="text-white bg-[#FF4D38] flex items-center justify-center py-3 px-6 rounded-xl shadow-md"
+                                className="text-white bg-[#FF4D38] flex items-center justify-center py-3 px-6 rounded-xl shadow-md cursor-pointer hover:bg-[#e04430] "
                                 onClick={filtrarProduto}
                             >
                                 <span className="font-semibold">Buscar</span>

@@ -52,7 +52,7 @@ function CardProduto({ produto }) {
           <div className="flex space-x-4 p-4">
             <button
               onClick={() => setModalAberto(true)}
-              className="w-full border border-[#FF4D38] text-[#FF4D38]  hover:border-[#d6523d] hover:cursor-zoom-in bg-[rgba(255,77,56,0.04)] flex items-center justify-center py-2 rounded-xl font-semibold"
+              className="w-full border border-[#FF4D38] text-[#FF4D38]  hover:border-[#d6523d] hover:cursor-zoom-in bg-[rgba(255,77,56,0.04)] flex items-center justify-center py-2 rounded-xl font-semibold hover:bg-[rgba(255,77,56,0.30)]"
             >
               Saiba Mais
             </button>

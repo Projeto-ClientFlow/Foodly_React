@@ -39,7 +39,7 @@ function Navbar() {
             </Link>
             <button
               onClick={logout}
-              className="bg-[#FF4D38] text-white py-2 px-4 rounded-lg hover:opacity-90 transition"
+              className="bg-[#FF4D38] text-white py-2 px-4 rounded-lg hover:bg-[#e04430]  transition cursor-pointer"
             >
               Sair
             </button>
@@ -64,7 +64,7 @@ function Navbar() {
             </Link>
             <Link
               to="/login"
-              className="bg-[#FF4D38] text-white py-2 px-4 rounded-lg hover:opacity-90 transition"
+              className="bg-[#FF4D38] text-white py-2 px-4 rounded-lg hover:bg-[#e04430] transition"
             >
               Entrar
             </Link>

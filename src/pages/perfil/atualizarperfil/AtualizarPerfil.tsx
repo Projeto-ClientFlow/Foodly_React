@@ -22,6 +22,7 @@ function EditarPerfil() {
     }
   }, [usuario.token, navigate]);
 
+  
   async function buscarUsuario() {
     await buscar(`/usuarios/${usuario.id}`, setUsuarioUpdate, {
       headers: {

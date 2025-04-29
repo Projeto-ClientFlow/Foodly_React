@@ -66,7 +66,9 @@ function CardProduto({ produto }) {
           </div>
         </div>
       </div>
+ 
 
+ 
       {/* Modal */}
       {modalAberto && (
         <div className="fixed inset-0 bg-[rgba(255,77,56,0.08)] flex items-center justify-center z-50">

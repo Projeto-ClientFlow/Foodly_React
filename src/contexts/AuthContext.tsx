@@ -20,7 +20,7 @@ export const AuthContext = createContext({} as AuthContextProps)
 export function AuthProvider({ children }: AuthProviderProps) {
 
     const [usuario, setUsuario] = useState<UsuarioLogin>({
-        id: 0,
+        id: null,
         nome: "",
         usuario: "",
         senha: "",
@@ -34,16 +34,16 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setIsLoading(true)
         try {
             await login(`/usuarios/logar`, usuarioLogin, setUsuario)
-            alert("O Usuário foi autenticado com sucesso!")
+            ToastAlerta('O usuário foi autenticado com sucesso!', 'sucesso')
         } catch (error) {
-            alert("Os Dados do usuário estão inconsistentes!")
+            ToastAlerta('Os dados do usuário estão inconsistentes!', 'aviso')
         }
         setIsLoading(false)
     }
 
     function handleLogout() {
         setUsuario({
-            id: 0,
+            id: null,
             nome: "",
             usuario: "",
             senha: "",

@@ -46,6 +46,7 @@ function CardProduto({ produto }) {
             <span>R$ {produto.precoProduto}</span>
           </div>
 
+
         </div>
 
         <div className="flex flex-col">

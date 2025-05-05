@@ -5,7 +5,7 @@
 
 Clique e acesse a demo do Foodly no Youtube!
 
-[![Assista à demo do ClientFlow!](https://ik.imagekit.io/willa/Design%20sem%20nome%20(5).png?updatedAt=1746213311039)](https://youtu.be/HInqPNLu2u8)
+[![Assista à demo do ClientFlow!](https://ik.imagekit.io/willa/Design%20sem%20nome%20(5).png?updatedAt=1746213311039)](https://youtu.be/u6SN97x-9gQ)
 
 
 </div>
